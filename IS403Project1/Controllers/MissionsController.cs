@@ -15,7 +15,7 @@ namespace IS403Project1.Controllers
         new Mission {MissionID = 1, MissionName = "Russia Moscow", PresidentName = "Garry E. Borders",
             Address = "Muravskaya St1 D, Floor 3 Moscow Moscow 125310 Russia", Language ="Russian",
             Climate = "60°/45°", DominantReligion = "Russian Eastern Orthodox",
-            FlagURL = "/Content/Images/russianflag.png"},
+            FlagURL = "/Content/Images/Russia.png"},
         new Mission {MissionID = 2, MissionName = "Brazil Brasilia", PresidentName = "Mark C. Lundgren",
             Address = "SHIN CA 05 LOTE B1 Salas 304 / 307, Brasilia 71503 - 505 DF, CEP – DF Brazil", Language ="Portuguese",
             Climate = "74°/23°", DominantReligion = "Catholicism",
