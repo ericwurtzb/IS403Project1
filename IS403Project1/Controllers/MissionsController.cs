@@ -41,9 +41,11 @@ namespace IS403Project1.Controllers
             return View();
         }
 
-        public ActionResult DisplayMission(int id)
+        [HttpPost]
+        public ActionResult DisplayMission(string id)
         {
-            return View(lstMissions.Find(x => x.MissionID == id));
+            int idNum = Convert.ToInt32(id);
+            return View(lstMissions.Find(x => x.MissionID == idNum));
         }
     }
 }
