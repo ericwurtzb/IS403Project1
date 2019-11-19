@@ -1,11 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
-
 <h2>Missions</h2>
-
-<form action="Missions/DisplayMission" method="post">
+@using (Html.BeginForm("DisplayMission", "Missions", FormMethod.Post))
+{
     <label>Select a mission:</label>
     <select name="id">
         <option value="1">Russia Moscow</option>
