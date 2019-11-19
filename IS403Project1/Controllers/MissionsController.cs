@@ -42,9 +42,18 @@ namespace IS403Project1.Controllers
             return View();
         }
 
-        public ActionResult DisplayMission(int id)
+        [HttpPost]
+        public ActionResult DisplayMission(string id)
         {
-            return View(lstMissions.Find(x => x.MissionID == id));
+            int idNum = Convert.ToInt32(id);
+
+            ViewBag.Question1 = lstQuestions[0].question_Name;
+            ViewBag.Question2 = lstQuestions[1].question_Name;
+            ViewBag.Question3 = lstQuestions[2].question_Name;
+            ViewBag.Question4 = lstQuestions[3].question_Name;
+            ViewBag.Question5 = lstQuestions[4].question_Name;
+
+            return View(lstMissions.Find(x => x.MissionID == idNum));
         }
     }
 }
