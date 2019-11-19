@@ -1,14 +1,14 @@
 ﻿@model MissionProject.Models.Mission
 
 @{
-    ViewBag.Title = "DisplayMission";
+    ViewBag.Title = "Mission Information";
 }
-
-<h2>DisplayMission</h2>
+<script src="~/Scripts/myJS.js"></script>
+<h2>Mission Information</h2>
+<hr />
 
 <div>
-    <h4>Mission</h4>
-    <hr />
+    <h3>Mission Information</h3>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.MissionName)
@@ -68,6 +68,35 @@
 
     </dl>
 </div>
+
+<div>
+    <h3>Frequently Asked Questions</h3>
+    <span id="question1">@ViewBag.Question1</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('1')" id="btn1" value="Reply" />
+    <div id="output1"></div>
+    <br />
+    <span id="question2">@ViewBag.Question2</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('2')" id="btn2" value="Reply" />
+    <div id="output2"></div>
+    <br />
+    <span id="question3">@ViewBag.Question3</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('3')" id="btn3" value="Reply" />
+    <div id="output3"></div>
+    <br />
+    <span id="question4">@ViewBag.Question4</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('4')" id="btn4" value="Reply" />
+    <div id="output4"></div>
+    <br />
+    <span id="question5">@ViewBag.Question5</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('5')" id="btn5" value="Reply" />
+    <div id="output5"></div>
+</div>
+
+<div>
+    <h3>Ask A Question</h3>
+    <form>
+        <textarea rows="4" cols="50" placeholder="Ask a question here..."></textarea>
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+<br />
+
 <p>
     @Html.ActionLink("Back to Missions", "Index")
 </p>
