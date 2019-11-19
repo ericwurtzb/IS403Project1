@@ -38,6 +38,7 @@ namespace IS403Project1.Controllers
         // GET: Missions
         public ActionResult Index()
         {
+
             return View();
         }
     }
