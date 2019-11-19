@@ -19,5 +19,10 @@ namespace IS403Project1.Controllers
         {
             return View();
         }
+        
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }
