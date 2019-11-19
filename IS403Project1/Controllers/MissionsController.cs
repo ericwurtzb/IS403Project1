@@ -28,7 +28,7 @@ namespace IS403Project1.Controllers
 
         public static List<Question> lstQuestions = new List<Question>()
         {
-            new Question {question_Code = 1, question_Name = "What our the people like bro?"},
+            new Question {question_Code = 1, question_Name = "What are the people like bro?"},
             new Question {question_Code = 2, question_Name = "What should I bring with me to my mission?"},
             new Question {question_Code = 3, question_Name = "How I successfully share the gospel in my mission?"},
             new Question {question_Code = 4, question_Name = "What is the president the current president like?"},
