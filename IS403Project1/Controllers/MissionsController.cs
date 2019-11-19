@@ -15,15 +15,15 @@ namespace IS403Project1.Controllers
         new Mission {MissionID = 1, MissionName = "Russia Moscow", PresidentName = "Garry E. Borders",
             Address = "Muravskaya St1 D, Floor 3 Moscow Moscow 125310 Russia", Language ="Russian",
             Climate = "60°/45°", DominantReligion = "Russian Eastern Orthodox",
-            FlagURL = "~/Content/Images/russianflag.png"},
+            FlagURL = "/Content/Images/russianflag.png"},
         new Mission {MissionID = 2, MissionName = "Brazil Brasilia", PresidentName = "Mark C. Lundgren",
             Address = "SHIN CA 05 LOTE B1 Salas 304 / 307, Brasilia 71503 - 505 DF, CEP – DF Brazil", Language ="Portuguese",
             Climate = "74°/23°", DominantReligion = "Catholicism",
-            FlagURL = "~/Content/Images/mapOfTheWorld.png"},
+            FlagURL = "/Content/Images/mapOfTheWorld.png"},
         new Mission {MissionID = 3, MissionName = "Canada Halifax", PresidentName = "Brian D. Leavitt",
             Address = "202 Brownlow Ave Unit F Bldg F Dartmouth NS B3B 1T5 Canada", Language ="English",
             Climate = "27°/-3°", DominantReligion = "Catholicism",
-            FlagURL = "~/Content/Images/LIST_FlagfactsFeb15_Gallery.jpg"}
+            FlagURL = "/Content/Images/LIST_FlagfactsFeb15_Gallery.jpg"}
         };
 
         public static List<Question> lstQuestions = new List<Question>()
@@ -41,9 +41,9 @@ namespace IS403Project1.Controllers
             return View();
         }
 
-        //public ActionResult DisplayMission()
-        //{
-
-        //}
+        public ActionResult DisplayMission(int id)
+        {
+            return View(lstMissions.Find(x => x.MissionID == id));
+        }
     }
 }
