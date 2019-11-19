@@ -12,7 +12,7 @@ namespace IS403Project1.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var bacon;
+            
             return View();
         }
     }
