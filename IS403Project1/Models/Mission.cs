@@ -30,8 +30,9 @@ namespace MissionProject.Models
         [DisplayName("Dominant Religion")]
         public string DominantReligion { get; set; }
 
-        [Url(ErrorMessage = "Please enter an image URL")]
+ 
         [DisplayName("Flag")]
-        public string FlagURL { get; set; }
+        public string Flag { get; set; }
+
     }
 }
