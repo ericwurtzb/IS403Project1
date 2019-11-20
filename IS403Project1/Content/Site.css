@@ -46,3 +46,9 @@ textarea {
     align-items: center;
     justify-content: center;
 }
+
+/*remove side margins*/
+.body-content {
+    margin-left: 0;
+    margin-right: 0;
+}

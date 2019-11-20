@@ -14,7 +14,7 @@ namespace MissionProject.Models
         [DisplayName("Name of Mission")]
         public string MissionName { get; set; }
 
-        [DisplayName("Name of Mission President")]
+        [DisplayName("Mission President")]
         public string PresidentName { get; set; }
 
         [DisplayName("Mission Address")]
