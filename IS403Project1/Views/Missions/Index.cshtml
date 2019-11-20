@@ -1,14 +1,27 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<h2>Missions</h2>
-@using (Html.BeginForm("DisplayMission", "Missions", FormMethod.Post))
-{
-    <label>Select a mission:</label>
-    <select name="id">
-        <option value="1">Russia Moscow</option>
-        <option value="2">Brazil Brasilia</option>
-        <option value="3">Canada Halifax</option>
-    </select>
-    <input class="btn btn-primary btn-sm" type="submit"  value="Go" />
-}
+
+<div style="height:540px; background-image: url('../../Content/Images/mapOfTheWorld.png');">
+    <center>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="background-color:black; padding:50px; border-radius:25px; width:40%">
+            <h2 style="color:white">Missions</h2>
+            @using (Html.BeginForm("DisplayMission", "Missions", FormMethod.Post))
+            {
+                <label style="color:white">Select a mission:</label>
+                <select name="id">
+                    <option value="1">Russia Moscow</option>
+                    <option value="2">Brazil Brasilia</option>
+                    <option value="3">Canada Halifax</option>
+                </select>
+                <input class="btn btn-primary btn-sm" type="submit" value="Go" />
+            }
+        </div>
+    </center>
+    
+</div>
