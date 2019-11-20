@@ -9,7 +9,7 @@ for (iCount = 0; iCount < 10; iCount++) {
 
 function response(num) {
     document.getElementById("btn" + num).style.display = "none";
-    var newForm = "<form action='SubmitForm' method='post'><textarea id='textarea" + num + "' name='answer' + placeholder='Respond here...'></textarea> <br /> <input type='button' onclick='submitAnswer(" + num + ")' value='Save' /></form>";
+    var newForm = "<form action='SubmitForm' method='post'><textarea id='textarea" + num + "' name='answer' + placeholder='Respond here...'></textarea> <br /> <input type='button' class='btn btn-primary btn - sm' onclick='submitAnswer(" + num + ")' value='Save' /></form>";
     document.getElementById("output" + num).innerHTML = newForm;
 }
 
