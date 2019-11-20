@@ -4,11 +4,13 @@
     ViewBag.Title = "Mission Information";
 }
 <script src="~/Scripts/myJS.js"></script>
-<h2>Mission Information</h2>
-<hr />
 
-<div>
-    <h3>Mission Information</h3>
+<nav>
+    <h2>@Html.DisplayFor(model => model.MissionName) Mission Information</h2>
+</nav>
+<hr />
+<br />
+<section style="width:60%">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.MissionName)
@@ -63,13 +65,14 @@
         </dt>
 
         <dd>
-            <img src="@Html.DisplayFor(model => model.Flag)" alt="Alternate Text" />
+            <img style="width:30%"src="@Html.DisplayFor(model => model.Flag)" alt="Alternate Text" />
         </dd>
 
     </dl>
-</div>
+</section>
+<br />
 
-<div>
+<div  style="float: left; width:45%">
     <h3>Frequently Asked Questions</h3>
     <span id="question1">@ViewBag.Question1</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="response('1')" id="btn1" value="Reply" />
     <div id="output1"></div>
@@ -88,7 +91,7 @@
 </div>
 
 <div>
-    <h3>Ask A Question</h3>
+    <h3>Ask a Question</h3>
     <form>
         <textarea rows="4" cols="50" placeholder="Ask a question here..."></textarea>
         <br />
