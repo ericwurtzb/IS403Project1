@@ -72,22 +72,36 @@
 </section>
 <br />
 
-<div  style="float: left; width:45%">
+<div style="float: left; width:45%">
     <h3>Frequently Asked Questions</h3>
-    <span id="question1">@ViewBag.Question1</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary btn-sm" onclick="response('1')" id="btn1" value="Reply" />
-    <div id="output1"></div>
-    <br />
-    <span id="question2">@ViewBag.Question2</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary btn-sm" onclick="response('2')" id="btn2" value="Reply" />
-    <div id="output2"></div>
-    <br />
-    <span id="question3">@ViewBag.Question3</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary btn-sm" onclick="response('3')" id="btn3" value="Reply" />
-    <div id="output3"></div>
-    <br />
-    <span id="question4">@ViewBag.Question4</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary btn-sm" onclick="response('4')" id="btn4" value="Reply" />
-    <div id="output4"></div>
-    <br />
-    <span id="question5">@ViewBag.Question5</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary btn-sm" onclick="response('5')" id="btn5" value="Reply" />
-    <div id="output5"></div>
+    <table>
+        <tr>
+            <td valign="top"><span id="question1">@ViewBag.Question1</span></td>
+            <td><input type="button" class="btn btn-primary btn-sm" onclick="response('1')" id="btn1" value="Reply" /><div id="output1"></div></td>
+            
+        </tr>
+        <tr>
+            <td valign="top"><span id="question2">@ViewBag.Question2</span></td>
+            <td><input type="button" class="btn btn-primary btn-sm" onclick="response('2')" id="btn2" value="Reply" /><div id="output2"></div></td>
+            
+        </tr>
+        <tr>
+            <td valign="top"><span id="question3">@ViewBag.Question3</span></td>
+            <td><input type="button" class="btn btn-primary btn-sm" onclick="response('3')" id="btn3" value="Reply" /><div id="output3"></div></td>
+            
+        </tr>
+        <tr>
+            <td valign="top"><span id="question4">@ViewBag.Question4</span></td>
+            <td><input type="button" class="btn btn-primary btn-sm" onclick="response('4')" id="btn4" value="Reply" /><div id="output4"></div></td>
+            
+        </tr>
+        <tr>
+            <td valign="top"><span id="question5">@ViewBag.Question5</span></td>
+            <td><input type="button" class="btn btn-primary btn-sm" onclick="response('5')" id="btn5" value="Reply" /><div id="output5"></div></td>
+            
+        </tr>
+
+    </table>
 </div>
 
 <div>

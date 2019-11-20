@@ -96,7 +96,7 @@
     <Content Include="Content\Images\Canada.png" />
     <Content Include="Content\Images\hero-1600px-small.jpg" />
     <Content Include="Content\Images\hero-1600px.jpg" />
-    <Content Include="Content\Images\missionaries.jpg" />
+    <Content Include="Content\Images\mapOfTheWorld.png" />
     <Content Include="Content\Images\Russia.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
