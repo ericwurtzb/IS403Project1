@@ -1,59 +1,128 @@
-﻿using IS403Project1.Models;
-using MissionProject.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using IS403Project1.DAL;
+using MissionProject.Models;
 
 namespace IS403Project1.Controllers
 {
     public class MissionsController : Controller
     {
-        public static List<Mission> lstMissions = new List<Mission>()
-        {
-        new Mission {MissionID = 1, MissionName = "Russia Moscow", PresidentName = "Garry E. Borders",
-            Address = "Muravskaya St1 D, Floor 3 Moscow Moscow 125310 Russia", Language ="Russian",
-            Climate = "60°/45°", DominantReligion = "Russian Eastern Orthodox",
-            Flag = "/Content/Images/Brazil.png"},
-        new Mission {MissionID = 2, MissionName = "Brazil Brasilia", PresidentName = "Mark C. Lundgren",
-            Address = "SHIN CA 05 LOTE B1 Salas 304 / 307, Brasilia 71503 - 505 DF, CEP – DF Brazil", Language ="Portuguese",
-            Climate = "74°/23°", DominantReligion = "Catholicism",
-            Flag = "/Content/Images/Canada.png"},
-        new Mission {MissionID = 3, MissionName = "Canada Halifax", PresidentName = "Brian D. Leavitt",
-            Address = "202 Brownlow Ave Unit F Bldg F Dartmouth NS B3B 1T5 Canada", Language ="English",
-            Climate = "27°/-3°", DominantReligion = "Catholicism",
-            Flag = "/Content/Images/Russia.jpg"}
-        };
-
-        public static List<Question> lstQuestions = new List<Question>()
-        {
-            new Question {question_Code = 1, question_Name = "What are the people like bro?"},
-            new Question {question_Code = 2, question_Name = "What should I bring with me to my mission?"},
-            new Question {question_Code = 3, question_Name = "How I successfully share the gospel in my mission?"},
-            new Question {question_Code = 4, question_Name = "What is the president the current president like?"},
-            new Question {question_Code = 5, question_Name = "Which foods should I try to avoid?"}
-        };
+        private MissionDatabaseContext db = new MissionDatabaseContext();
 
         // GET: Missions
         public ActionResult Index()
         {
+            return View(db.Missions.ToList());
+        }
 
+        // GET: Missions/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Mission mission = db.Missions.Find(id);
+            if (mission == null)
+            {
+                return HttpNotFound();
+            }
+            return View(mission);
+        }
+
+        // GET: Missions/Create
+        public ActionResult Create()
+        {
             return View();
         }
 
+        // POST: Missions/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult DisplayMission(string id)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "MissionID,MissionName,PresidentName,Address,Language,Climate,DominantReligion,Flag")] Mission mission)
         {
-            int idNum = Convert.ToInt32(id);
+            if (ModelState.IsValid)
+            {
+                db.Missions.Add(mission);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-            ViewBag.Question1 = lstQuestions[0].question_Name;
-            ViewBag.Question2 = lstQuestions[1].question_Name;
-            ViewBag.Question3 = lstQuestions[2].question_Name;
-            ViewBag.Question4 = lstQuestions[3].question_Name;
-            ViewBag.Question5 = lstQuestions[4].question_Name;
+            return View(mission);
+        }
 
-            return View(lstMissions.Find(x => x.MissionID == idNum));
+        // GET: Missions/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Mission mission = db.Missions.Find(id);
+            if (mission == null)
+            {
+                return HttpNotFound();
+            }
+            return View(mission);
+        }
+
+        // POST: Missions/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "MissionID,MissionName,PresidentName,Address,Language,Climate,DominantReligion,Flag")] Mission mission)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(mission).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(mission);
+        }
+
+        // GET: Missions/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Mission mission = db.Missions.Find(id);
+            if (mission == null)
+            {
+                return HttpNotFound();
+            }
+            return View(mission);
+        }
+
+        // POST: Missions/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Mission mission = db.Missions.Find(id);
+            db.Missions.Remove(mission);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MissionProject.Models
 {
+    [Table("Missions")]
     public class Mission
     {
+        [Key]
         public int MissionID { get; set; }
 
         [DisplayName("Name of Mission")]
@@ -30,7 +33,6 @@ namespace MissionProject.Models
         [DisplayName("Dominant Religion")]
         public string DominantReligion { get; set; }
 
- 
         [DisplayName("Flag")]
         public string Flag { get; set; }
 
