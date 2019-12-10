@@ -143,8 +143,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MissionQuestionsController.cs" />
     <Compile Include="Controllers\MissionsController.cs" />
     <Compile Include="Controllers\MissionsOldController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\MissionDatabaseContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,6 +174,17 @@
     <Content Include="Views\Missions\Delete.cshtml" />
     <Content Include="Views\Missions\Details.cshtml" />
     <Content Include="Views\Missions\Edit.cshtml" />
+    <Content Include="Views\MissionQuestions\Create.cshtml" />
+    <Content Include="Views\MissionQuestions\Delete.cshtml" />
+    <Content Include="Views\MissionQuestions\Details.cshtml" />
+    <Content Include="Views\MissionQuestions\Edit.cshtml" />
+    <Content Include="Views\MissionQuestions\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

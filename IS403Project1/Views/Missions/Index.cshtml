@@ -5,9 +5,9 @@
 }
 
 <h2>Index</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Details", "Missions", FormMethod.Post))
 {
-    @Html.DropDownList("Select Mission", new SelectList(Model, "MissionID", "MissionName"))
+    @Html.DropDownList("id", new SelectList(Model, "MissionID", "MissionName"))
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Select" class="btn btn-default" />

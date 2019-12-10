@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
-
+<script src="~/Scripts/myJS.js"></script>
 <h2>Details</h2>
 
 <div>
@@ -63,12 +63,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Flag)
+            <img src="@Html.DisplayFor(model => model.Flag)" alt="@Html.DisplayNameFor(model => model.Flag)" />
         </dd>
 
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MissionID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("FAQ", "Index", "MissionQuestions", new { id = Model.MissionID }, null)
+</p>
+
+<p>
+    @Html.ActionLink("Back to Mission Selection", "Index")
 </p>
